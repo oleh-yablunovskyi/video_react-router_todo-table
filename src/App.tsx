@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { todos } from './data/todos';
+import { TodoTable } from './components/TodoTable';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+export const App = () => {
+  return <>
+    <nav className="navbar is-light px-3">
+      <div className="navbar-brand">
+        <a href="/" className="navbar-item">
+          <img src="/logo.svg" alt="MA" className="logo" />
         </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+        <a href="/" className="navbar-item">Home</a>
+        <a href="todos" className="navbar-item">Todos</a>
+      </div>
+    </nav>
+
+    <div className="section">
+      <h1 className="title">Todos Page</h1>
+
+      <TodoTable
+        todos={todos}
+        selectedTodoId={3}
+      />
+    </div>
+  </>;
+};
