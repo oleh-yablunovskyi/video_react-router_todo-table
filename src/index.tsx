@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 
 import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -11,7 +11,7 @@ import { TodosPage } from './pages/TodosPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 const Root = () => (
-  <BrowserRouter>
+  <Router>
     <Routes>
       <Route path="/" element={<App />}>
         <Route index element={<HomePage />} />
@@ -25,7 +25,7 @@ const Root = () => (
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes> 
-  </BrowserRouter>
+  </Router>
 );
 
 const root = ReactDOM.createRoot(
